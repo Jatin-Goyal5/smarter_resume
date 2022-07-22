@@ -146,8 +146,7 @@ module.exports = {
     updateUser: async (req, res, next) => {
         let updateObj = {};
         for (let i in req.body) {
-            if (req.body[i].length)
-                updateObj[i] = req.body[i];
+            updateObj[i] = req.body[i];
         }
 
         updateObj = {

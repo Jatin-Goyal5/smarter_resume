@@ -7,8 +7,8 @@ import { Edit, SaveOutlined } from '@material-ui/icons';
 import { useEffect } from 'react';
 export default function Profile(){
     const [email , setEmail] = useState('');
-    const [name, setName] = useState('');
-    const [location, setLocation] = useState('');
+    const [name, setName] = useState('Add A NAME');
+    const [location, setLocation] = useState('Add a location');
     const [contact , setContact] = useState('');
     const [about, setAbout] = useState('');
     const {updateUser, getDetail} = useContext(AuthContext);
@@ -19,8 +19,17 @@ export default function Profile(){
           let response = await getDetail('user');
           setEmail(response.email);
           setContact(response.contact);
-          setName(response.name);
-          setLocation(response.location);
+          if(response.name == undefined || response.name == ''){
+              setName(response.email.split('@')[0]);
+          }else{
+            setName(response.name);
+          }
+          if(response.location == undefined || response.location == ''){
+            setLocation('Add a location')
+            }else{
+            setLocation(response.location);
+            }
+        //   setLocation(response.location);
           setAbout(response.about);
         })()
     },[]);
