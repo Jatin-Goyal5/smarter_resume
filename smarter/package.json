@@ -1,0 +1,32 @@
+{
+  "name": "smarter_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/__test__/** --recursive --exit",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "chai": "^4.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^10.0.0",
+    "mockgoose": "^8.0.4",
+    "mongodb-memory-server": "^8.7.2",
+    "mongoose": "^6.4.4",
+    "mongoose-unique-validator": "^3.1.0",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
+  },
+  "devDependencies": {
+    "chai-http": "^4.3.0"
+  }
+}
